@@ -51,8 +51,7 @@ EXPOSE 5901
 # TODO novnc depends on net-tools until version 1.1.0: https://github.com/novnc/noVNC/issues/1075
 RUN dnf install -y \
     net-tools novnc
-RUN rm /usr/share/novnc/index.html
-RUN ln -s /usr/share/novnc/vnc_lite.html /usr/share/novnc/index.html
+
 # TODO specify options like ports as environment variables -> source variables in service via EnvironmentFile=/path/to/env
 COPY novnc.service /etc/systemd/system/novnc.service
 RUN systemctl enable novnc
