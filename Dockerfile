@@ -16,7 +16,7 @@ CMD [ "/sbin/init" ]
 
 # Install GNOME
 # NOTE initial setup uninstalled as disabling via /etc/gdm3/custom.conf stopped working: https://askubuntu.com/q/1028822/206608
-RUN dnf install -y @base-x gnome-shell gnome-terminal nautilus firefox # chrome-gnome-shell gnome-tweaks @development-tools
+RUN dnf install -y @base-x gnome-shell gnome-terminal nautilus firefox gnome-software # chrome-gnome-shell gnome-tweaks @development-tools
 
 # Remove unnecessary system targets
 # TODO remove more targets but make sure that startup completes and login promt is displayed when "docker run -it"
